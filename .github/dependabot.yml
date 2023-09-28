@@ -6,6 +6,18 @@
 version: 2
 updates:
   - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/initial" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/initial" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/complete" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle" # See documentation for possible values
     directory: "/complete" # Location of package manifests
     schedule:
       interval: "daily"
