@@ -23,5 +23,5 @@ jobs:
 
     - name: Merge upstream changes
       run: |
-        git merge upstream/main  # Replace with upstream's default branch if different
-        git push origin main  # Replace with your default branch if different
+        git merge upstream/main  
+        git push origin main  
