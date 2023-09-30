@@ -2,7 +2,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight
+    - cron: '5 5 * * 5'  # Runs every day at midnight
   workflow_dispatch:
 
 jobs:
@@ -12,12 +12,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        ref: 'main'  # Replace with your default branch if different
-
+        ref: 'main'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: Add remote upstream
       run: |
-        git remote get-url upstream || git remote add upstream git@github.com:spring-guides/gs-rest-service.git
-
+        git remote get-url upstream || git remote add upstream https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/spring-guides/gs-rest-service.git
     - name: Fetch upstream changes
       run: git fetch upstream
 
